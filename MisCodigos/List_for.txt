@@ -1,0 +1,50 @@
+import 'package:flutter/material.dart';
+
+void main() { 
+  runApp(const MainApp());
+}
+
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.light().copyWith(
+      ),
+
+
+
+      home: Scaffold( //Scaffold es lo más importante
+        appBar: AppBar(
+          leading: const Icon(Icons.menu), //Icono de menú
+          title: const Text('Diagramación'), //Título de la AppBar
+          actions: const [
+            Icon(Icons.more_vert), //Icono de mover_vert
+          ],
+        ),
+
+
+        body: ListView(
+          children: [
+
+            //Lista de 20 items, utilizando un ciclo, útil al momento de usar BBDD
+            for(var i = 1; i <= 20; i++) ListTile(
+              leading: const CircleAvatar(
+                backgroundColor: Colors.blue,
+              ),
+              title: Text('Item $i'),
+              trailing: ElevatedButton(
+                onPressed: () {
+                },
+                child: const Text('Acción'),
+              ),
+            ),
+            const SizedBox(height: 12.0), //Espacio de 12 pixeles entre los containers
+          ],
+        ),
+      ),
+    );
+  }
+}
