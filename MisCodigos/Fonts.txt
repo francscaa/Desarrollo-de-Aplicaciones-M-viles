@@ -1,0 +1,148 @@
+import 'package:flutter/material.dart';
+
+void main() { 
+  runApp(const MainApp());
+}
+
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.light().copyWith(
+      ),
+
+
+
+      home: Scaffold( //Scaffold es lo más importante
+        appBar: AppBar(
+          title: const Text('Textos según Material Design'), //Título de la AppBar
+        ),
+
+
+        body: ListView(
+          padding: const EdgeInsets.all(16.0),
+          children: const [
+            //Titulo H1
+            Text(
+              'Título Principal (H1)',
+              style: TextStyle(
+                fontSize: 96,
+                fontWeight: FontWeight.w300,
+                letterSpacing: -1.5,
+              ),
+            ),
+
+            Text(
+              'Título Principal (H2)',
+              style: TextStyle(
+                fontSize: 60,
+                fontWeight: FontWeight.w300,
+                letterSpacing: -0.5,
+              ),
+            ),
+
+            Text(
+              'Título Principal (H3)',
+              style: TextStyle(
+                fontSize: 48,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+
+            Text(
+              'Título Principal (H4)',
+              style: TextStyle(
+                fontSize: 34,
+                fontWeight: FontWeight.w400,
+                letterSpacing: 0.25,
+              ),
+            ),
+
+            Text(
+              'Título Principal (H5)',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+
+            Text(
+              'Título Principal (H6)',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+                letterSpacing: 0.15,
+              ),
+            ),
+
+            Text(
+              'Subtitulo 1 (Subtitle 1)', //Texto que se mostrará
+              style: TextStyle(
+                fontSize: 16, //Tamaño de la fuente
+                fontWeight: FontWeight.w400, //Peso de la fuente
+                letterSpacing: 0.15, //Espaciado
+              ),
+            ),
+
+            Text(
+              'Subtitulo 2 (Subtitle 2)', //Texto que se mostrará
+              style: TextStyle(
+                fontSize: 14, //Tamaño de la fuente
+                fontWeight: FontWeight.w500, //Peso de la fuente
+                letterSpacing: 0.1, //Espaciado
+              ),
+            ),
+
+            Text(
+              'Texto del cuerpo 1 (Body Text 1)', //Texto que se mostrará
+              style: TextStyle(
+                fontSize: 16, //Tamaño de la fuente
+                fontWeight: FontWeight.w400, //Peso de la fuente
+                letterSpacing: 0.5, //Espaciado
+              ),
+            ),
+
+            Text(
+              'Texto del cuerpo 2 (Body Text 2)', //Texto que se mostrará
+              style: TextStyle(
+                fontSize: 14, //Tamaño de la fuente
+                fontWeight: FontWeight.w400, //Peso de la fuente
+                letterSpacing: 0.25, //Espaciado
+              ),
+            ),
+
+            Text(
+              'Botón (Button)', //Texto que se mostrará
+              style: TextStyle(
+                fontSize: 14, //Tamaño de la fuente
+                fontWeight: FontWeight.w500, //Peso de la fuente
+                letterSpacing: 1.25, //Espaciado
+              ),
+            ),
+
+            Text(
+              'Etiqueta (Caption)', //Texto que se mostrará
+              style: TextStyle(
+                fontSize: 12, //Tamaño de la fuente
+                fontWeight: FontWeight.w400, //Peso de la fuente
+                letterSpacing: 0.4, //Espaciado
+              ),
+            ),
+
+            Text(
+              'Texto de encabezado (Overline)', //Texto que se mostrará
+              style: TextStyle(
+                fontSize: 10, //Tamaño de la fuente
+                fontWeight: FontWeight.w400, //Peso de la fuente
+                letterSpacing: 1.5, //Espaciado
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

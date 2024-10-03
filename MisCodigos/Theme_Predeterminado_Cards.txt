@@ -13,16 +13,9 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 255, 136, 0),
+          seedColor: Color.fromARGB(255, 23, 90, 6),
         ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.orange, //Color de fondo del botón
-            foregroundColor: Colors.white, //Color del texto del botón
-            elevation: 4, //Elevación del botón
-          ),
-        ),
-        useMaterial3: true, //Opcional para usar Material 3
+        useMaterial3: true,
       ),
       
 

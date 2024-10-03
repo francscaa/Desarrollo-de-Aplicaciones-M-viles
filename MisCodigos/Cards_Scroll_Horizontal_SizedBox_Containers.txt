@@ -1,0 +1,229 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MainApp());
+}
+
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.light().copyWith(
+        appBarTheme: const AppBarTheme(
+          backgroundColor:
+              Color.fromARGB(255, 128, 2, 120), //Color de la AppBar azul
+          foregroundColor: Colors.white, //Color del texto en la AppBar blanco
+        ),
+      ),
+      home: Scaffold(
+        //Scaffold es lo más importante
+        appBar: AppBar(
+          title: const Text('Espacios'),
+        ),
+
+        body: ListView(
+          padding: const EdgeInsets.all(16.0),
+          children: [
+            //Primer Cards
+            Card(
+              elevation: 4.0,
+              margin: const EdgeInsets.only(bottom: 16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Container(
+                    height: 200, //Altura del contenedor dentro de la Card
+                    color: const Color.fromARGB(
+                        255, 197, 197, 197), //Color sólido en lugar de imagen
+                    width: double.infinity, //Ancho completo
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(16.0),
+                    child: const Text(
+                      'Titulo de la Card 1',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        //Acción cuando se presiona el botón
+                      },
+                      child: const Text('Ver más'),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Card(
+              elevation: 4.0,
+              margin: const EdgeInsets.only(bottom: 16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Container(
+                    height: 200, //Altura del contenedor dentro de la Card
+                    color: const Color.fromARGB(
+                        255, 197, 197, 197), //Color sólido en lugar de imagen
+                    width: double.infinity, //Ancho completo
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(16.0),
+                    child: const Text(
+                      'Titulo de la Card 1',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        //Acción cuando se presiona el botón
+                      },
+                      child: const Text('Ver más'),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Container(
+              height: 250, //Ajuste de la altura de las Cards
+              margin: const EdgeInsets.symmetric(
+                  vertical: 16.0, horizontal: 12.0), //Márgenes
+              decoration: BoxDecoration(
+                color: Colors.white, //Color de fondo
+                borderRadius: BorderRadius.circular(12.0), //Bordes redondeados
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2), //Sombra suave
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: const Offset(0, 3), //Desplazamiento de la sombra
+                  ),
+                ],
+              ),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal, //Hacer que la fila sea deplazable horizontalmente
+                child: Row(
+                  children: List.generate(
+                    8,
+                    (index) => //Generar 8 Cards
+                        Card(
+                      elevation: 4.0,
+                      margin: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Container(
+                            height:
+                                180, //Altura del contenedor dentro de la Card
+                            color: const Color.fromARGB(255, 197, 197,
+                                197), //Color sólido en lugar de imagen
+                            width: 180, //Ancho fijo
+                          ),
+                          Container(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Text(
+                              'Título de la Card ${index + 1}',
+                              style: const TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.bold),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+                height: 12.0), //Espacio de 12 pixeles entre los containers
+
+            //Cards horizontales desplegables
+            SizedBox(
+              //Opción de utilizar SizedBox en vez de container, renuncio a decoradores, margen y rellenos. Determina el tamaño de la caja, es como un div.
+              height:
+                  250, //Ajuste de la altura total para que no ocurra overflow
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal, //Desplazamiento horizontal
+                child: Row(
+                  children: [
+                    //Card 1
+                    Container(
+                      width: 180, //Ancho fijo de las Cards
+                      margin: const EdgeInsets.all(8.0),
+                      child: Card(
+                        elevation: 4.0,
+                        child: Column(
+                          children: [
+                            Container(
+                              height:
+                                  150, //Ajusta la altura dle contenido de la Card
+                              color: const Color.fromARGB(
+                                  255, 197, 197, 197), //Color sólido
+                              width: double.infinity,
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Text(
+                                'Titulo de la Card 1',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    //Card 2
+                    Container(
+                      width: 180, //Ancho fijo de las Cards
+                      margin: const EdgeInsets.all(8.0),
+                      child: Card(
+                        elevation: 4.0,
+                        child: Column(
+                          children: [
+                            Container(
+                              height:
+                                  150, //Ajusta la altura dle contenido de la Card
+                              color: const Color.fromARGB(
+                                  255, 197, 197, 197), //Color sólido
+                              width: double.infinity,
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Text(
+                                'Titulo de la Card 2',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+
+
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 12.0), //Espacio adicional al final
+          ],
+        ),
+      ),
+    );
+  }
+}
